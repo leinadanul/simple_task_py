@@ -1,0 +1,9 @@
+
+{% block content %}
+    <h1>Detalles de Tarea</h1>
+    <h2>{{ task.title }}</h2>
+    <p>{{ task.description }}</p>
+    <a class="btn btn-secondary" href="{% url 'task_list' %}">Volver a la Lista</a>
+    <a class="btn btn-primary" href="{% url 'task_update' task.pk %}">Editar</a>
+    <a class="btn btn-danger" href="{% url 'task_delete' task.pk %}">Eliminar</a>
+{% endblock %}

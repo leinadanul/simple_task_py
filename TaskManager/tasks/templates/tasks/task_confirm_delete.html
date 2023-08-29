@@ -1,0 +1,10 @@
+
+{% block content %}
+    <h1>Confirmación de Eliminación</h1>
+    <p>¿Estás seguro de que deseas eliminar la tarea "{{ task.title }}"?</p>
+    <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a class="btn btn-secondary" href="{% url 'task_detail' task.pk %}">Cancelar</a>
+    </form>
+{% endblock %}
