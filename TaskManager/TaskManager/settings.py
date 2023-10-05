@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'drf_yasg',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'user'
 ]
 
 MIDDLEWARE = [
@@ -141,6 +144,10 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+
 }
 # SWAGGER_SETTINGS ISNTALL
 
@@ -158,5 +165,8 @@ SWAGGER_SETTINGS = {
     'DOC_EXPANSION': 'none',
 }
 
+
+
+AUTH_USER_MODEL = 'user.CustomUser'
 
 
